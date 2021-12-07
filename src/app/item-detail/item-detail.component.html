@@ -1,0 +1,28 @@
+<div class="grid grid-cols-4 gap-4 m-4">
+  <app-item [item]="item" class=""></app-item>
+  <div class="space-y-4 flex flex-col justify-end">
+    <div class="flex flex-row justify-between">
+      <div>
+        <label>Select qty: </label>
+        <select
+          name="qty"
+          id="qty"
+          #t
+          (change)="selectQty(t.value)"
+          class="border-2"
+        >
+          <option *ngFor="let qty of qtyOptions" [value]="qty">
+            {{ qty }}
+          </option>
+        </select>
+      </div>
+      <p>x {{ item.price }} = {{ totalPrice }}</p>
+    </div>
+    <button (click)="onSubmit()" type="submit" class="h-10 border-2 rounded-md">
+      Add to Cart
+    </button>
+    <button (click)="backToProducts()" class="h-10 border-2 rounded-md">
+      Back to products
+    </button>
+  </div>
+</div>

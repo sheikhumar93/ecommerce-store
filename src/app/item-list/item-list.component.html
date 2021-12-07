@@ -1,0 +1,9 @@
+<div class="grid grid-cols-4 gap-4 m-4">
+  <a
+    *ngFor="let item of items"
+    routerLink="/items/{{ item.id }}"
+    class="hover:bg-gray-400"
+  >
+    <app-item [item]="item"></app-item>
+  </a>
+</div>
