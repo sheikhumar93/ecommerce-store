@@ -1,6 +1,13 @@
 # EcommerceStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+This project is an ecommerce store frontend generated using Angular CLI 13.0.4 built as a Capstone project for Udacity's Full Stack JavaScript Developer Nanodegree Program.
+
+## Setup
+
+1. `git clone` the project
+2. `cd` into the project dir
+3. Run `npm install` in the project dir
+4. Run `ng build` to run
 
 ## Development server
 
