@@ -7,4 +7,9 @@
     </div>
     <p class="font-bold">${{ item.price }}</p>
   </div>
+  <div *ngIf="cartItem">
+    <button (click)="removeItem.emit(item)">
+      <img src="/assets/trash-bin.png" alt="deleteItem" class="w-6 h-6" />
+    </button>
+  </div>
 </div>

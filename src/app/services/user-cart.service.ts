@@ -18,6 +18,15 @@ export class UserCartService {
       this.order.id = 1,
         this.order.items[0] = orderItem
     } else {
+      for (let i = 0; i < this.order.items.length; i++) {
+        if (this.order.items[i].id === orderItem.id) {
+          // console.log('Matched', this.order.items[i].qty, orderItem.qty)
+
+          this.order.items[i].qty = Number(this.order.items[i].qty) + Number(orderItem.qty)
+          this.numberOfItems.next(this.order.items.length)
+          return
+        }
+      }
       this.order.items.push(orderItem)
     }
     this.numberOfItems.next(this.order.items.length)

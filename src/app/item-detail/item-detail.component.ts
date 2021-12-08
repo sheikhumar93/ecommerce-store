@@ -42,8 +42,7 @@ export class ItemDetailComponent implements OnInit {
     alert(`${this.item.name} added to cart`)
   }
 
-  selectQty(qty: string) {
-    this.selectedQty = Number(qty)
+  selectQty() {
     this.totalPrice = Math.round(this.item.price * this.selectedQty * 100) / 100
   }
 

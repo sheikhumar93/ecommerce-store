@@ -2,15 +2,16 @@
   <div class="">
     <ul *ngFor="let orderItem of order.items" class="flex flex-col">
       <li>
-        <app-item [item]="orderItem.product"></app-item>
+        <app-item
+          [item]="orderItem.product"
+          [cartItem]="true"
+          (removeItem)="deleteItemFromCart(orderItem)"
+        ></app-item>
         <div class="flex flex-row justify-between">
           <p>
             x {{ orderItem.qty }} =
             {{ orderItem.product.price * orderItem.qty }}
           </p>
-          <button (click)="deleteItemFromCart(orderItem)">
-            <img src="/assets/trash-bin.png" alt="deleteItem" class="w-6 h-6" />
-          </button>
         </div>
       </li>
     </ul>

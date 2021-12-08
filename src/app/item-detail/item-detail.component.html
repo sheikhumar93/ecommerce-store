@@ -7,10 +7,10 @@
         <select
           name="qty"
           id="qty"
-          #t
-          (change)="selectQty(t.value)"
-          class="border-2"
+          [(ngModel)]="selectedQty"
+          (ngModelChange)="selectQty()"
         >
+          class="border-2" >
           <option *ngFor="let qty of qtyOptions" [value]="qty">
             {{ qty }}
           </option>
